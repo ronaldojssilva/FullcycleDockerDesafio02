@@ -9,17 +9,15 @@ const config = {
 };
 
 
-
-
- 
 app.get('/', (req, res) => {
 
 
+    // res.send('<h1>Full Cycle no node</h1>')
 
     const mysql = require('mysql')
     const connection = mysql.createConnection(config)
     
-    // CREATE TABLE IF NOT EXISTS
+    /////CREATE TABLE IF NOT EXISTS
     let sql = `CREATE TABLE IF NOT EXISTS people (name VARCHAR(10))`;
     connection.query(sql);
     
@@ -27,7 +25,6 @@ app.get('/', (req, res) => {
     connection.query(sql);
     
 
-    //res.send('<h1>Full Cycle no node</h1>')
     res.write('<h1>Full Cycle no node</h1>')
 
     
@@ -56,6 +53,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, ()=>{
     console.log('Rodando na porta ' + port)
-
-
 })
